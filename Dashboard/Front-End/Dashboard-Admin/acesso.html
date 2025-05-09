@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal do Admin</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <!-- NAV LATERAL -->
+  <nav id="menuLateral" class="menu-lateral escondido">
+    <ul>
+      <li><a href="home-admin.html"><img src="/Img/Home.png" alt="Ícone 1"></a></li>
+      <li><a href="agendamento-admin.html"><img src="/Img/Agendamento.png" alt="Ícone 2"></a></li>
+      <li><a href="acesso.html"><img src="/Img/Indique.png" alt="Ícone 3"></a></li>
+      <li><a href="configuração.html"><img src="/Img/Configurações.png" alt="Ícone 4"></a></li>
+      <li class="icone-inferior"><img src="/Img/Sair.png" alt="Ícone 5"></li> <!--Ligar ao back-end pra pessoa deslogar da conta e volta pra pagina login-->
+    </ul>
+  </nav>
+
+  <!-- TOPO -->
+  <header class="topo">
+    <img src="/Img/Menu.png" id="btnMenu" class="botao-menu" alt="Menu">
+    <div class="titulo-logo">
+      <h2 class="titulo-mini">Portal do Admin</h2>
+      <img src="/Img/Logo.png" class="logo" alt="Logo ClickPet">
+    </div>
+
+    <div class="area-direita-topo">
+      <span class="nome-admin">Nome do admin</span>
+      <div class="foto-admin"><img src="cliente.jpg" alt="Foto do admin"></div>
+      <button id="btnChat" class="botao-chat">
+        <img src="/Img/Chat.png" alt="Chat"> Chat
+      </button>
+    </div>
+  </header>
+
+  <!-- RETÂNGULO DO CHAT -->
+  <div id="chatBox" class="chat-box escondido">
+    <!-- Aqui futuramente entram mensagens do backend -->
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

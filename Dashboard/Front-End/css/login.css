@@ -1,0 +1,129 @@
+/* TELA DE LOGIN */
+:root {
+  --primary: #FF244A;
+  --primary-dark: #D61F3E;
+  --secondary: #1CEAE4;
+  --secondary-dark: #16C4BE;
+  --tertiary: #FFE910;
+  --quaternary: #4FFF38;
+  --dark: #1A1A1A;
+  --dark-gray: #333333;
+  --medium-gray: #666666;
+  --light-gray: #E5E5E5;
+  --lighter-gray: #F5F5F5;
+  --white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden; /* ← Isso remove a barra lateral horizontal */
+}  
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--light-gray);
+  color: var(--dark);
+  scroll-behavior: smooth;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.login-container {
+  background-color: var(--light-gray);
+  width: 90%;
+  max-width: 750px;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+  
+  .logo-banner {
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    margin-top: 20px;
+  }
+  
+  .login-subtitle {
+    color: var(--dark);
+    font-size: 22px;
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .login-label {
+    color: var(--dark);
+    font-size: 16px;
+    margin: 15px 0 5px;
+    align-self: center;
+    max-width: 780px;
+    width: 77%;
+  }
+  
+  .login-input {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 50px;
+    width: 80%;
+    max-width: 780px;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 16px;
+  }
+  
+  .login-link {
+    width: 77%;
+    color: var(--dark);
+    font-size: 16px;
+    margin: 5px 0px 40px;
+    text-decoration: underline;
+  }
+
+  .esqueci-link{
+    width: 77%;
+    color: var(--dark);
+    font-size: 14px;
+    margin: 5px;
+    text-decoration: underline;
+  }
+  
+  .login-button {
+    background-color: var(--primary);
+    color: var(--white);
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    width: 387px;
+    height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .login-button:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .login-input, .login-label {
+      width: 100%;
+    }
+  
+    .login-button {
+      width: 90%;
+    }
+  }
+

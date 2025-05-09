@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal do Admin</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <!-- NAV LATERAL -->
+  <nav id="menuLateral" class="menu-lateral escondido">
+    <ul>
+      <li><a href="home-admin.html"><img src="/Img/Home.png" alt="Ícone 1"></a></li>
+      <li><a href="estatisticas.html"><img src="/Img/Agendamento.png" alt="Ícone 2"></a></li>
+      <li><a href="acesso.html"><img src="/Img/Indique.png" alt="Ícone 3"></a></li>
+      <li><a href="configuração.html"><img src="/Img/Configurações.png" alt="Ícone 4"></a></li>
+      <li class="icone-inferior"><img src="/Img/Sair.png" alt="Ícone 5"></li> <!--Ligar ao back-end pra pessoa deslogar da conta e volta pra pagina login-->
+    </ul>
+  </nav>
+
+  <!-- TOPO -->
+  <header class="topo">
+    <img src="/Img/Menu.png" id="btnMenu" class="botao-menu" alt="Menu">
+    <div class="titulo-logo">
+      <h2 class="titulo-mini">Portal do Admin</h2>
+      <img src="/Img/Logo.png" class="logo" alt="Logo ClickPet">
+    </div>
+
+    <div class="area-direita-topo">
+      <span class="nome-admin">Nome do admin</span>
+      <div class="foto-admin"><img src="cliente.jpg" alt="Foto do admin"></div>
+      <button id="btnChat" class="botao-chat">
+        <img src="/Img/Chat.png" alt="Chat"> Chat
+      </button>
+    </div>
+  </header>
+
+  <!-- RETÂNGULO DO CHAT -->
+  <div id="chatBox" class="chat-box escondido">
+    <!-- Aqui futuramente entram mensagens do backend -->
+  </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="conteudo">
+        <div class="botoes-admin">
+          <button id="abrirAgendamento" class="botao-admin">
+            <img src="/Img/Agendamento.png" alt="Ícone" />
+            Agendar Atendimento
+          </button>
+          <button id="abrirCadastroServico" class="botao-admin">
+            <img src="/Img/Servico.png" alt="Ícone" />
+            Cadastrar Serviço
+          </button>
+          <button id="abrirCadastroCliente" class="botao-admin">
+            <img src="/Img/Cliente.png" alt="Ícone" />
+            Cadastrar Cliente
+          </button>
+          <button id="abrirCadastroPet" class="botao-admin">
+            <img src="/Img/Pet.png" alt="Ícone" />
+            Cadastrar Pet
+          </button>
+        </div>
+      </main>
+  
+  <!-- Sobreposição Etapa 1: Buscar Cliente -->
+  <div id="overlay-1" class="overlay">
+    <div class="modal-agendamento">
+      <h2>Agendar Atendimento</h2>
+  
+      <input type="text" id="inputBuscaCliente" placeholder="Digite nome, e-mail, CPF ou telefone" />
+      <button id="btnBuscarCliente" class="botao-laranja">Buscar</button>
+  
+      <div id="resultadoClientes" class="resultado-lista escondido">
+        <!-- resultados virão via JS -->
+      </div>
+  
+      <div class="botoes-modal">
+        <button id="cancelarCliente" class="btn-cancelar">Cancelar</button>
+        <button id="confirmarCliente" class="btn-confirmar escondido">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sobreposição Etapa 2: Selecionar Pet -->
+<div id="overlay-2" class="overlay">
+    <div class="modal-agendamento">
+      <h2>Agendar Atendimento</h2>
+  
+      <!-- Info do cliente -->
+      <div class="cliente-resumo">
+        <img id="fotoClienteSelecionado" src="" alt="Foto do cliente" />
+        <span id="nomeClienteSelecionado">Nome do Cliente</span>
+      </div>
+  
+      <!-- Pets -->
+      <h3>Pets cadastrados:</h3>
+      <div id="listaPetsCliente" class="resultado-lista">
+        <!-- Lista via JS -->
+      </div>
+  
+      <!-- Botão para redirecionar -->
+      <button id="cadastrarNovoPet" class="botao-laranja">
+        Cadastrar novo pet
+      </button>
+  
+      <!-- Botões -->
+      <div class="botoes-modal">
+        <button id="voltarParaCliente" class="btn-cancelar">Voltar</button>
+        <button id="cancelarPet" class="btn-cancelar">Cancelar</button>
+        <button id="confirmarPets" class="btn-confirmar">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sobreposição Etapa 3: Data, Horário e Serviços -->
+<div id="overlay-3" class="overlay">
+    <div class="modal-agendamento">
+      <h2>Agendar Atendimento</h2>
+  
+      <!-- Cliente e pets -->
+      <div class="cliente-resumo">
+        <img id="fotoClienteFinal" src="" alt="Foto do cliente" />
+        <span id="nomeClienteFinal">Nome do Cliente</span>
+      </div>
+  
+      <div id="resumoPetsSelecionados" class="pets-linha">
+        <!-- Pets selecionados via JS -->
+      </div>
+  
+      <!-- Data -->
+      <h3>Selecione a data:</h3>
+      <input type="date" id="dataAgendamento" />
+  
+      <!-- Horários -->
+      <h3>Horários disponíveis:</h3>
+      <div style="position: relative;">
+            <input type="text" id="inputHorarioSelecionado" placeholder="Selecione o horário" readonly />
+            <img src="/Img/grade-icon.png" id="btnAbrirGrade" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); width: 22px; cursor: pointer;" />
+      </div>
+      <div id="gradeHorarios" class="grade-horarios escondido"></div>
+  
+      <!-- Serviços -->
+      <h3>Serviços disponíveis:</h3>
+      <div id="listaServicos" class="resultado-lista">
+        <!-- Lista de serviços via JS -->
+      </div>
+  
+      <!-- Observações -->
+      <textarea id="observacoes" placeholder="Observações..."></textarea>
+  
+      <!-- Botões finais -->
+      <div class="botoes-modal">
+        <button id="voltarParaPets" class="btn-cancelar">Voltar</button>
+        <button id="btnCancelarFinal" class="btn-cancelar">Cancelar</button>
+        <button id="btnConfirmarAgendamento" class="btn-confirmar">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sobreposição Cadastro de Serviço -->
+<div id="overlay-cadastro-servico" class="overlay">
+    <div class="modal-agendamento">
+      <h2>Cadastrar e Editar Serviços</h2>
+  
+      <div id="listaServicosCadastro" class="resultado-lista">
+        <!-- Lista dos serviços com botão editar -->
+        <!-- Exemplo gerado dinamicamente -->
+      </div>
+  
+      <button id="btnNovoServico" class="botao-confirmar" style="width: 100%; margin-top: 20px;">
+        Cadastrar novo serviço
+      </button>
+  
+      <div class="botoes-modal">
+        <button class="btn-cancelar" onclick="document.getElementById('overlay-cadastro-servico').classList.remove('ativo')">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sobreposição Cadastro e Edição de Cliente -->
+   <div id="overlay-cadastro-cliente" class="overlay">
+        <div class="modal-agendamento">
+            <h2>Cadastrar e Editar Dados do Cliente</h2>
+  
+      <!-- Barra de busca -->
+      <div class="linha-busca">
+        <input type="text" id="inputBuscaClienteAdm" placeholder="Buscar por nome, e-mail, CPF ou telefone" style="flex: 1;" />
+        <button id="btnBuscarClienteAdm" class="botao-confirmar">Buscar</button>
+      </div>
+  
+      <!-- Lista de clientes encontrados -->
+      <div id="listaClientesAdm" class="resultado-lista">
+        <!-- Clientes aparecem aqui via JS -->
+      </div>
+  
+      <!-- Botão para novo cadastro -->
+      <button id="btnNovoCliente" class="botao-confirmar" style="width: 100%; margin-top: 20px;">
+        Cadastrar Cliente
+      </button>
+  
+      <!-- Botões gerais -->
+      <div class="botoes-modal">
+        <button class="btn-cancelar" onclick="document.getElementById('overlay-cadastro-cliente').classList.remove('ativo')">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sobreposição Cadastro de Pet - Etapa 1: Buscar Cliente -->
+    <div id="overlay-cadastro-pet-etapa1" class="overlay">
+    <div class="modal-agendamento">
+      <h2>Cadastrar Pet</h2>
+  
+      <!-- Busca -->
+      <div class="linha-busca">
+        <input type="text" id="inputBuscaClientePet" class="campo-busca" placeholder="Buscar por nome, e-mail, CPF ou telefone" />
+        <button id="btnBuscarClientePet" class="botao-confirmar">Buscar</button>
+      </div>
+  
+      <!-- Resultados de clientes -->
+      <div id="listaClientesPet" class="resultado-lista">
+        <!-- JS insere aqui -->
+      </div>
+  
+      <!-- Botões -->
+      <div class="botoes-modal">
+        <button class="btn-cancelar" onclick="document.getElementById('overlay-cadastro-pet-etapa1').classList.remove('ativo')">Cancelar</button>
+        <button id="btnContinuarCadastroPet" class="btn-confirmar escondido">Continuar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sobreposição Cadastro de Pet - Etapa 2: Pets do Cliente -->
+<div id="overlay-cadastro-pet-etapa2" class="overlay">
+    <div class="modal-agendamento">
+      <h2>Pets do Cliente</h2>
+  
+      <!-- Info cliente -->
+      <div class="cliente-resumo">
+        <img id="fotoClientePet" src="" alt="Foto do cliente" />
+        <span id="nomeClientePet">Nome do Cliente</span>
+      </div>
+  
+      <!-- Lista de pets -->
+      <div id="listaPetsClienteCadastro" class="resultado-lista">
+        <!-- JS insere os pets aqui -->
+      </div>
+  
+      <!-- Botão para cadastrar novo pet -->
+      <button id="btnAbrirFormularioPet" class="botao-confirmar" style="width: 100%; margin-top: 20px;">
+        Cadastrar Pet ao Cliente
+      </button>
+  
+      <!-- Botões -->
+      <div class="botoes-modal">
+        <button class="btn-cancelar" onclick="document.getElementById('overlay-cadastro-pet-etapa2').classList.remove('ativo')">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sobreposição Cadastro/Editar Pet -->
+<div id="overlay-formulario-pet" class="overlay">
+    <div class="modal-agendamento">
+      <h2>Cadastrar/Editar Pet ao Cliente:</h2>
+  
+      <!-- Info cliente -->
+      <div class="cliente-resumo">
+        <img id="imagemClientePetResumo" src="" alt="Foto do cliente" />
+        <span id="nomeClientePetResumo">Nome do Cliente</span>
+      </div>
+  
+      <!-- Formulário -->
+      <label>Nome do Pet</label>
+      <input type="text" id="petNome" />
+  
+      <label>Idade</label>
+      <input type="number" id="petIdade" />
+  
+      <label>Raça</label>
+      <input type="text" id="petRaca" />
+  
+      <label>Data de Nascimento</label>
+      <input type="date" id="petNascimento" />
+  
+      <label>Gênero</label>
+      <select id="petGenero">
+        <option value="">Selecione</option>
+        <option value="Macho">Macho</option>
+        <option value="Fêmea">Fêmea</option>
+      </select>
+  
+      <div class="botoes-modal">
+        <button class="btn-cancelar" onclick="
+          document.getElementById('overlay-cadastro-pet-etapa1').classList.remove('ativo');
+          document.getElementById('overlay-cadastro-pet-etapa2').classList.add('ativo');
+        ">Voltar</button>
+      
+        <button class="btn-cancelar" onclick="
+          document.getElementById('overlay-formulario-pet').classList.remove('ativo')
+        ">Cancelar</button>
+      
+        <button id="btnSalvarPet" class="btn-confirmar" disabled>Salvar</button>
+      </div>      
+      </div>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const token  = params.get("token");
+    if (token) {
+      localStorage.setItem("token", token);
+      history.replaceState({}, "", location.pathname);
+    }
+  </script>
+  
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Escolher-cadastro</title>
+  <link rel="stylesheet" href="css/escolher-cadastro.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+  <div class="cadastro-opcoes-container" data-aos="fade-up">
+    <img src="https://www.institutocriativo.com.br/images/Logo.svg" alt="Banner" class="logo-banner" />
+
+    <h2 class="login-subtitle">Escolha a forma de cadastramento:</h2>
+
+    <a href="cadastro.html" class="cadastro-opcao">E-mail/Senha</a>
+
+    <button class="cadastro-opcao" onclick="cadastrarGoogle()">
+      <img src="/Img/google-icon.png" alt="Google" class="icone-social" />
+      Conta Google
+    </button>
+  </div>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="script.js"></script>
+  <script>
+    function cadastrarGoogle() {
+      window.location.href = "http://localhost:3000/api/auth/google";
+  }
+  </script>
+</body>
+</html>

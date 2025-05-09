@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Editar Pets</title>
+  <link rel="stylesheet" href="cliente.css" />
+  <link href="https://unpkg.com/cropperjs@1.5.13/dist/cropper.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- NAV LATERAL -->
+  <nav id="menuLateral" class="menu-lateral escondido">
+    <ul>
+      <li><a href="home-cliente.html"><img src="/Img/Home.png" alt="Ícone 1"></a></li>
+      <li><a href="agendamento.html"><img src="/Img/Agendamento.png" alt="Ícone 2"></a></li>
+      <li><a href="indique.html"><img src="/Img/Indique.png" alt="Ícone 3"></a></li>
+      <li><a href="configuração.html"><img src="/Img/Configurações.png" alt="Ícone 4"></a></li>
+      <li class="icone-inferior"><img src="/Img/Sair.png" alt="Ícone 5"></li> <!--Ligar ao back-end pra pessoa deslogar da conta e volta pra pagina login-->
+    </ul>
+  </nav>
+
+  <!-- TOPO -->
+  <header class="topo">
+    <img src="/Img/Menu.png" id="btnMenu" class="botao-menu" alt="Menu">
+    <div class="titulo-logo">
+      <h2 class="titulo-mini">Cadastrar/Editar dados do Pet</h2>
+      <img src="/Img/Logo.png" class="logo" alt="Logo ClickPet">
+    </div>
+
+    <div class="area-direita-topo">
+      <button id="btnChat" class="botao-chat">
+        <img src="/Img/Chat.png" alt="Chat"> Chat
+      </button>
+    </div>
+  </header>
+
+  <!-- RETÂNGULO DO CHAT -->
+  <div id="chatBox" class="chat-box escondido">
+    <!-- Aqui futuramente entram mensagens do backend -->
+  </div>
+
+  <main class="conteudo-dados">
+    <!-- QUADRADO BRANCO EXTERNO -->
+    <div class="campo-imagem">
+      <div class="texto-ola">
+        <h1>Meus Pets</h1>
+      </div>
+
+      <!-- QUADRADO INTERNO COM ROLAGEM -->
+      <div id="listaPets" style="background:#fff; border-radius:20px; margin:20px 40px; height:280px; overflow-y:auto; padding:20px; height:280px; overflow-y:auto;">
+        <!-- Pets serão inseridos aqui via JS -->
+      </div>
+
+      <!-- BOTÃO Cadastrar novo pet -->
+      <button id="btnNovoPetReal" class="botao-salvar">Cadastrar novo pet</button>
+
+      <!-- BOTÃO Voltar -->
+      <button onclick="window.location.href='home-cliente.html'" class="botao-salvar" style="background:#ccc; color:#000; margin: 0 40px;">Voltar</button>
+    </div>
+  </main>
+
+  <!-- MODAL DE EDIÇÃO DE PET -->
+  <div id="modalPet" class="modal hidden">
+    <div class="modal-content" style="width:700px;">
+      <h2 style="margin-bottom:10px;">Editar Pet</h2>
+      <input id="editNome" placeholder="Nome" class="input-dado" /><br/>
+      <input id="editIdade" placeholder="Idade" class="input-dado" /><br/>
+      <input id="editRaca" placeholder="Raça" class="input-dado" /><br/>
+      <input id="editNascimento" type="date" class="input-dado" /><br/>
+      <select id="editGenero" class="input-dado">
+        <option value="Macho">Macho</option>
+        <option value="Fêmea">Fêmea</option>
+      </select><br/>
+
+      <div style="display:flex; justify-content:space-between; margin-top:20px;">
+        <div>
+          <button id="btnSalvarPet" class="botao-salvar">Salvar</button>
+          <button id="btnCancelarPet" class="botao-salvar" style="background:#ccc; color:#000;">Cancelar</button>
+        </div>
+
+        <div>
+          <div id="fotoPreviewPet" class="foto-cliente-dados" style="width:150px;height:150px;"></div>
+          <button id="btnEditarFotoPet" class="btn-foto">Editar Foto</button>
+          <button id="btnExcluirFotoPet" class="btn-foto">Excluir Foto</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL CROP DE FOTO -->
+  <div id="cropperModalPet" class="modal hidden">
+    <div class="modal-content">
+      <img id="cropperImagePet" />
+      <div class="cropper-actions">
+        <button id="btnCropSavePet">Salvar Foto</button>
+        <button id="btnCropCancelPet">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/cropperjs@1.5.13/dist/cropper.min.js"></script>
+  <script src="cliente.js"></script>
+</body>
+</html>

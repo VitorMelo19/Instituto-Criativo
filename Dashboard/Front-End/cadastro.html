@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro | Instituto Criativo</title>
+  <link rel="stylesheet" href="css/cadastro.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+  <div class="cadastro-container" data-aos="fade-up">
+    <img src="https://www.institutocriativo.com.br/images/Logo.svg" alt="Banner" class="logo-banner" />
+
+    <h2 class="login-subtitle">Preencha as informações abaixo:</h2>
+
+    <div class="cadastro-form">
+      <!-- Coluna Esquerda -->
+      <div class="coluna">
+        <label class="login-label" for="nome">Nome:</label>
+        <input class="login-input" type="text" id="nome" placeholder="Nome" />
+
+        <label class="login-label" for="sobrenome">Sobrenome:</label>
+        <input class="login-input" type="text" id="sobrenome" placeholder="Sobrenome" />
+
+        <label class="login-label" for="celular">DD + Celular:</label>
+        <input class="login-input" type="tel" id="celular" placeholder="(XX) XXXXX-XXXX" />
+
+        <label class="login-label" for="cpf">CPF/CNPJ:</label>
+        <input class="login-input" type="text" id="cpf" placeholder="Digite seu CPF ou CNPJ" />
+      </div>
+
+      <!-- Coluna Direita -->
+      <div class="coluna">
+        <label class="login-label" for="email">E-Mail:</label>
+        <input class="login-input" type="email" id="email" placeholder="E-Mail" />
+
+        <label class="login-label" for="senha">Senha:</label>
+        <input class="login-input" type="password" id="senha" placeholder="Senha" />
+
+        <label class="login-label" for="endereco">Endereço, Nº:</label>
+        <input class="login-input" type="text" id="endereco" placeholder="Rua Exemplo, 123" />
+
+        <label class="login-label" for="cep">CEP:</label>
+        <input class="login-input" type="text" id="cep" placeholder="00000-000" />
+      </div>
+    </div>
+
+    <button class="login-button">Cadastrar</button>
+  </div>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

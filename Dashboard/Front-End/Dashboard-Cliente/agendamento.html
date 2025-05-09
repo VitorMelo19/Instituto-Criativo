@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Cliente</title>
+  <link rel="stylesheet" href="cliente.css">
+</head>
+<body>
+  <!-- NAV LATERAL -->
+  <nav id="menuLateral" class="menu-lateral escondido">
+    <ul>
+      <li><a href="home-cliente.html"><img src="/Img/Home.png" alt="Ícone 1"></a></li>
+      <li><a href="agendamento.html"><img src="/Img/Agendamento.png" alt="Ícone 2"></a></li>
+      <li><a href="indique.html"><img src="/Img/Indique.png" alt="Ícone 3"></a></li>
+      <li><a href="configuração.html"><img src="/Img/Configurações.png" alt="Ícone 4"></a></li>
+      <li class="icone-inferior"><img src="/Img/Sair.png" alt="Ícone 5"></li> <!--Ligar ao back-end pra pessoa deslogar da conta e volta pra pagina login-->
+    </ul>
+  </nav>
+
+  <!-- TOPO -->
+  <header class="topo">
+    <img src="/Img/Menu.png" id="btnMenu" class="botao-menu" alt="Menu">
+    <div class="titulo-logo">
+      <h2 class="titulo-mini">Agendamento</h2>
+      <img src="/Img/Logo.png" class="logo" alt="Logo ClickPet">
+    </div>
+
+    <div class="area-direita-topo">
+      <span class="nome-cliente">Nome do cliente</span>
+      <div class="foto-cliente"><img src="cliente.jpg" alt="Foto do cliente"></div>
+      <button id="btnChat" class="botao-chat">
+        <img src="/Img/Chat.png" alt="Chat"> Chat
+      </button>
+    </div>
+  </header>
+
+  <!-- RETÂNGULO DO CHAT -->
+  <div id="chatBox" class="chat-box escondido">
+    <!-- Aqui futuramente entram mensagens do backend -->
+  </div>
+
+  <main class="conteudo-agendamento">
+
+    <!-- CASO NÃO TENHA AGENDAMENTOS -->
+    <div id="sem-agendamento" class="sem-agendamento escondido">
+      <p class="mensagem-sem-agendamento">Você não possui horários agendados</p>
+      <button class="botao-agendar">Agendar Horário</button>
+    </div>
+  
+    <!-- CASO TENHA AGENDAMENTOS -->
+   <main class="conteudo-agendamento">
+  <div id="com-agendamento" class="grade-agendamentos">
+
+    <div class="bloco-agendamento">
+      <div class="cabecalho-agendamento">
+        <span class="data-agendamento">24/05</span>
+        <span class="hora-agendamento">19h55</span>
+      </div>
+
+      <!-- CONTEÚDO COM ROLAGEM GERAL -->
+      <div class="conteudo-agendamento-rolavel">
+
+        <!-- PET COM SERVIÇOS -->
+        <div class="pet-agendado">
+          <div class="cabecalho-pet">
+            <div class="foto-pet"></div>
+            <div class="info-pet-agendado">
+              <span class="nome-pet">Nome: Rex</span>
+              <span class="idade-pet">Idade: 3 anos</span>
+            </div>
+          </div>
+
+          <div class="servico-titulo">Serviço(s)</div>
+
+          <div class="box-servico-rolavel">
+            <div class="servico-box">
+              <div class="servico-nome">Banho e Tosa</div>
+              <div class="observacao-label">observação:</div>
+              <div class="observacao-conteudo">usar shampoo hipoalergênico</div>
+            </div>
+            <div class="servico-box">
+              <div class="servico-nome">Hidratação</div>
+              <div class="observacao-label">observação:</div>
+              <div class="observacao-conteudo">hidratação profunda</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- repetir .pet-agendado se tiver mais pets no mesmo horário -->
+
+      </div>
+
+      <div class="acoes-agendamento">
+        <button class="btn-agendamento">Reagendar</button>
+        <button class="btn-agendamento">Cancelar</button>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+  
+      <!-- repetir mais blocos .bloco-agendamento se houver outros horários -->
+  
+    </div>
+  </main>
+  
+  <script src="cliente.js"></script>
+</body>
+</html>
