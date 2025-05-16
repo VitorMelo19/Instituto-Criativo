@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Instituto Criativo</title>
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <img src="imagens/logo3.svg" alt="Banner" class="logo-banner" />
+                <p>Faça login para acessar o dashboard</p>
+            </div>
+            
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" id="email" class="form-control" placeholder="seu@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password" class="form-label">Senha</label>
+                    <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+                </div>
+                
+                <div class="form-group form-options">
+                    <label class="checkbox">
+                        <input type="checkbox" checked>
+                        <span>Lembrar de mim</span>
+                    </label>
+                    <a href="#" class="text-link">Esqueceu a senha?</a>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+                
+                <div class="auth-footer">
+                    <p>Não tem uma conta? <a href="cadastro.html" class="text-link">Cadastre-se</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="auth.js"></script>
+</body>
+</html>

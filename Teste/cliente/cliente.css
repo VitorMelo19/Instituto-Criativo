@@ -1,0 +1,809 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Cores principais */
+:root {
+  /*--azul-fundo: #003566; */
+  --azul-fundo: #4a81ae;
+  --laranja: #f76c1e;
+  --branco: #ffffff;
+  --texto-branco: #fff;
+  --texto-preto: #000;
+}
+
+/* Corpo da página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--azul-fundo);
+  color: var(--texto-branco);
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ======= MENU LATERAL ======= */
+.menu-lateral {
+  position: fixed;
+  top: 28px;
+  left: 20px;
+  width: 50px;
+  height: 600px;
+  background-color: var(--laranja);
+  border-radius: 20px; /* arredonda **todas** as bordas do menu */
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: width 0.3s ease;
+  z-index: 1;
+}
+
+.menu-lateral ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.menu-lateral li img {
+  width: 35px;
+  cursor: pointer;
+}
+
+.menu-lateral.ativo {
+  width: 80px; /* largura ao abrir */
+}
+
+.menu-lateral .icone-inferior {
+  position: absolute;         /* tira do fluxo flex */
+  bottom: 30px;               /* afasta 20px do rodapé do menu */
+  left: 45px;                  /* centraliza horizontalmente */
+  transform: translateX(-50%);
+}
+
+/* Escondido */
+.escondido {
+  display: none;
+}
+
+/* ======= TOPO ======= */
+.topo {
+  position: fixed;
+  top: 30px;
+  left: 70px;
+  width: calc(100% - 70px);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: transparent;
+  z-index: 900;
+}
+
+.botao-menu {
+  width: 30px;
+  top: 20px;
+  cursor: pointer;
+  position: relative;  /* mantém no mesmo lugar */
+  left: -45px;
+  z-index: 2;       /* acima do .menu-lateral (que está em 999) */
+}
+
+.titulo-logo {
+  position: relative;
+  left: -300px;    /* ajusta este valor para reposicionar tudo à esquerda */
+  text-align: left;
+  top: 10px;
+}
+
+.titulo-mini {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--branco);
+}
+
+.logo {
+  width: 150px;
+  margin-top: 4px;
+  object-fit: contain;
+}
+
+/* ======= ÁREA DIREITA DO TOPO ======= */
+.area-direita-topo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nome-cliente {
+  color: var(--branco);
+  font-size: 14px;
+}
+
+.foto-cliente img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--branco);
+}
+
+.botao-chat {
+  background-color: var(--laranja);
+  color: var(--branco);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ======= CHAT BOX ======= */
+.chat-box {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  width: 260px;
+  height: calc(100% - 90px);
+  background-color: var(--branco);
+  border-radius: 15px 0 0 15px;
+  z-index: 800;
+  padding: 15px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ======= CONTEÚDO PRINCIPAL ======= */
+main.conteudo {
+  margin-top: 100px;
+  padding: 20px;
+  padding-left: 100px;
+  padding-right: 20px;
+}
+
+/* ======= CARROSSEL ======= */
+.carrossel {
+  width: 100%;
+  max-width: 1000px;
+  height: 495px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 0 auto 30px;
+  position: relative;
+}
+
+.carrossel-imgs {
+  display: flex;
+  width: 300%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carrossel-img {
+  width: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.carrossel-img.ativa {
+  display: block;
+}
+
+.bolinhas {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.bolinha {
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.bolinha.ativa {
+  background-color: var(--laranja);
+}
+
+/* ======= BLOCOS INFORMATIVOS ======= */
+.blocos-informativos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.bloco {
+  background-color: var(--branco);
+  border-radius: 15px;
+  width: 300px;
+  height: 300px;
+  padding: 15px;
+  overflow: hidden;
+  position: relative;
+  color: var(--texto-preto);
+}
+
+.cabecalho-bloco h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Conteúdo com rolagem */
+.conteudo-rolavel {
+  max-height: 230px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.servico,
+.agendamento {
+  background-color: var(--azul-fundo);
+  color: var(--branco);
+  border-radius: 10px;
+  padding: 8px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* PETS */
+.pet-cadastrado {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  background-color: var(--azul-fundo);
+  border-radius: 10px;
+  padding: 10px;
+  color: var(--branco);
+}
+
+.foto-pet img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.info-pet p {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media (max-width: 768px) {
+  .menu-lateral {
+    position: absolute;
+    z-index: 1000;
+  }
+
+  .topo {
+    left: 0;
+    width: 100%;
+  }
+
+  main.conteudo {
+    padding-left: 20px;
+  }
+
+  .blocos-informativos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chat-box {
+    right: 10px;
+    width: 90%;
+  }
+}
+
+
+/* ======= CONTEÚDO CONFIGURAÇÕES ======= */
+.conteudo-config {
+  margin-top: 100px;
+  padding: 20px;
+  padding-left: 100px;
+  padding-right: 20px;
+}
+
+/* Campo de imagem */
+.campo-imagem {
+  background: var(--branco);
+  border-radius: 30px;
+  width: 945px;
+  height: 239px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.texto-ola {
+  position: absolute;
+  top: 20px;
+  left: 78px;
+}
+
+.texto-ola h1 {
+  color: var(--azul-fundo);
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.texto-ola h2 {
+  color: var(--azul-fundo);
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.foto-cliente-config {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  width: 200px;
+  height: 200px;
+  background: var(--azul-fundo);
+  border-radius: 30px;
+}
+
+/* Defina o tamanho do container (ajuste conforme seu layout) */
+.foto-cliente-config {
+  width: 200px;       /* largura desejada */
+  height: 200px;      /* altura desejada */
+  border-radius: 50%; /* circula se quiser foto redonda */
+  overflow: hidden;   /* esconde as partes que ultrapassam */
+  align-items: center;
+  justify-content: center;
+  top: 20px;
+  right: 50px;
+  background: var(--azul-fundo);
+}
+
+/* Faz a imagem preencher todo o container */
+.foto-cliente-config img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* centraliza e corta mantendo proporção */
+}
+
+
+/* Minha conta */
+.minha-conta {
+  width: 945px;
+  margin: 50px auto 0;
+}
+
+.titulo-conta {
+  color: var(--branco);
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.blocos-opcoes {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.blocos-opcoes a { 
+  text-decoration: none; /* remove o sublinhado do link */
+}
+
+.bloco-opcao {
+  background: var(--branco);
+  border-radius: 30px;
+  width: 440px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--texto-preto);
+}
+
+.bloco-opcao.bloco-menor {
+  font-size: 25px;
+  width: 424px;
+}
+
+
+
+/* ======= AGENDAMENTO ======= */
+.conteudo-agendamento {
+  margin-top: 100px;
+  padding: 20px 100px;
+}
+
+/* Sem agendamento */
+.sem-agendamento {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.mensagem-sem-agendamento {
+  font-size: 32px;
+  color: var(--branco);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.botao-agendar {
+  background: var(--laranja);
+  color: var(--branco);
+  font-size: 30px;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* Com agendamento */
+.grade-agendamentos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Bloco individual de agendamento */
+.bloco-agendamento {
+  width: 469px;
+  background: var(--branco);
+  border-radius: 30px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho */
+.cabecalho-agendamento {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.data-agendamento {
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--texto-preto);
+}
+
+.hora-agendamento {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--texto-preto);
+}
+
+/* Conteúdo com rolagem */
+.conteudo-agendamento-rolavel {
+  background: var(--azul-fundo);
+  border-radius: 30px;
+  max-height: 260px;
+  overflow-y: auto;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+/* Pet */
+.pet-agendado {
+  background: var(--branco);
+  border-radius: 20px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+/* Topo com imagem + dados */
+.cabecalho-pet {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.foto-pet {
+  width: 100px;
+  height: 100px;
+  background: #eee;
+  border-radius: 50%;
+}
+
+.info-pet-agendado {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  color: var(--azul-fundo);
+}
+
+.servico-titulo {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  background: var(--branco);
+  border-radius: 20px;
+  padding: 5px 0;
+  color: var(--azul-fundo);
+  margin-bottom: 10px;
+}
+
+/* Rolagem interna de serviços */
+.box-servico-rolavel {
+  background: var(--branco);
+  border-radius: 10px;
+  max-height: 120px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+/* Cada serviço */
+.servico-box {
+  margin-bottom: 10px;
+}
+
+.servico-nome,
+.observacao-label,
+.observacao-conteudo {
+  color: var(--azul-fundo);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.servico-nome {
+  font-size: 16px;
+}
+
+.observacao-label {
+  margin-top: 8px;
+}
+
+.acoes-agendamento {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn-agendamento {
+  flex: 1;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  background: var(--azul-fundo);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* Util */
+.escondido {
+  display: none;
+}
+
+
+/* ======= DADOS PESSOAIS ======= */
+.conteudo-dados {
+  margin-top: 100px;
+  padding: 20px 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Colunas */
+.coluna-esquerda,
+.coluna-direita {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.coluna-esquerda {
+  width: 400px;
+}
+
+.coluna-direita {
+  width: 400px;
+}
+
+/* Labels */
+.label-dado {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--branco);
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+/* Inputs */
+.input-dado {
+  width: 100%;
+  height: 45px;
+  border-radius: 30px;
+  border: none;
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--texto-preto);
+  background-color: var(--branco);
+  outline: none;
+}
+
+/* Botão salvar */
+.container-salvar {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.botao-salvar {
+  width: 425px;
+  height: 65px;
+  font-size: 30px;
+  font-weight: 700;
+  border: none;
+  border-radius: 30px;
+  background: var(--laranja);
+  color: #000;
+  cursor: pointer;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+}
+
+/* Área da foto e botões de ação */
+.area-foto {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 40px;
+  padding-right: 80px;
+}
+
+.acoes-foto {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: flex-end; /* Alinha os itens à direita */
+}
+
+.btn-foto {
+  margin-left: auto; /* Empurra o botão para a direita */
+  width: 176px;
+  height: 36px;
+  background: var(--branco);
+  color: var(--azul-fundo);
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.foto-cliente-dados {
+  width: 200px;
+  height: 200px;
+  background: var(--branco);
+  border-radius: 10px;
+  margin-left: 40px;
+}
+
+.foto-cliente-dados img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* centraliza e corta mantendo proporção */
+}
+
+/* Overlay full‑screen */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;       /* cobre toda a largura */
+  height: 100%;      /* cobre toda a altura */
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Esconde quando tem .hidden */
+.modal.hidden {
+  display: none;
+}
+
+/* Caixa interna com tamanho limitado */
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;           /* até 90% da largura da tela */
+  max-height: 90%;          /* até 90% da altura da tela */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;         /* esconde barras de overflow */
+}
+
+/* Ajusta a imagem de recorte dentro da caixa */
+#cropperImage {
+  max-width: 100%;          /* nunca ultrapassa a largura da .modal-content */
+  max-height: calc(100vh - 200px); /* deixa espaço para botões */
+  object-fit: contain;
+}
+
+/* Botões de ação embaixo */
+.cropper-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+.cropper-actions button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+/* ======= DADOS PET ======= */
+#listaPets .preview-pet {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--azul-fundo);
+  color: white;
+  border-radius: 15px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+}
+
+#listaPets .preview-pet .info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 14px;
+}
+
+#listaPets .preview-pet img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+#listaPets .preview-pet .editar {
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+#modalPet .input-dado {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#modalPet select.input-dado {
+  height: 45px;
+}
+
+#modalPet .foto-cliente-dados {
+  background: var(--branco);
+  border-radius: 10px;
+  margin-top: 10px;
+}
