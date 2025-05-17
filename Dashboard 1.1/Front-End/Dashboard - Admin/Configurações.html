@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Instituto Criativo</title>
+    <title>Configurações | Instituto Criativo</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
@@ -12,7 +12,9 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-header">
-                    <img src="/Front-End/imagens/logo3.svg" alt="Educa+" height="30">                
+                <div class="sidebar-logo">
+                    <img src="/Front-End/imagens/logo3.svg" alt="Educa+" height="30">
+                </div>
             </div>
             
             <nav class="sidebar-nav">
@@ -61,67 +63,12 @@
                             <span>Configurações</span>
                         </a>
                     </li>
-                    
                 </ul>
             </nav>
         </aside>
-        
-        <!-- Main Content -->
+
         <main class="main-content">
             <header class="header">
-                <h2>Dashboard</h2>
-                
-                <div class="user-menu">
-                        <span class="nome">Nome do cliente</span>
-                        <div class="foto-user"><img src="User.jpg" alt="User"></div>
-                </div>
+                <h2>Configurações</h2>
             </header>
-            <!-- CONTEÚDO PRINCIPAL -->
-            <main class="conteudo">
-                <div class="graficos-container">
-                    <section class="grafico-servicos1">
-                        <canvas id="graficoServicos1"></canvas>
-                    </section>
-            
-                    <section class="grafico-servicos2">
-                        <canvas id="graficoServicos2"></canvas>
-                    </section>
-                </div>
-            </main>
-            
-
-            <!-- Próximos Eventos -->
-            <div class="card mb-4">
-                <div class="card-header">
-                    <h3>Próximos Eventos</h3>
-                </div>
-                
-                <div class="card-body">
-                    <div class="grid grid-cols-3 gap-4" id="upcomingEvents">
-                        <!-- Event cards will be loaded here -->
-                    </div>
-                </div>
-                
-                <div class="card-footer text-center">
-                    <a href="eventos.html" class="text-link">Ver todos os eventos</a>
-                </div>
-            </div>
-            
-            <!-- Minhas Inscrições - ISSO FICA NO DASHBOARD DO ALUNO
-            <div class="card">
-                <div class="card-header">
-                    <h3>Minhas Inscrições</h3>
-                </div>
-                
-                <div class="card-body">
-                    <div class="grid grid-cols-2 gap-4" id="myRegistrations">
-                         Registration cards will be loaded here 
-                    </div>
-                </div>
-            </div> -->
         </main>
-    </div>
-    
-    <script src="js/dashboard.js"></script>
-</body>
-</html>
