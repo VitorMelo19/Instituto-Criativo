@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acesso | Instituto Criativo</title>
+    <title>Dados | Instituto Criativo</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -65,67 +65,57 @@
                 </ul>
             </nav>
         </aside>
-        
-        <!-- Main Content -->
+
         <main class="main-content">
-            <header class="header">
-                <h3>Controle de Acesso</h3>
-                <div class="user-menu">
-                        <span class="nomeUsuario">Nome do Usuario</span>
-                        <div class="fotoUsuario"><img src="User.jpg" alt="User"></div>
-                </div>
-            </header>
-                <div class="card" style="border-radius: 20px; overflow-x: auto;">
-                    <div class="card-body">
-                        <table class="acesso-tabela">
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Email</th>
-                                <th>Permitir Acesso</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tabela-acesso-body">
-                            <!-- Conteúdo vindo do back-end via JS -->
-                        </tbody>
-                        </table>
-                    </div>
-                </div>
+        <header class="header">
+            <h2>Alterar Dados Pessoais</h2>
+        </header>
 
-                
-
-            
-            
-            <!-- Lista de Eventos  - colocar isso no dashboard aluno
-            <div class="card">
-                <div class="card-body">
-                    <div class="grid grid-cols-1 gap-4" id="myEventsList">
-                         Event cards will be loaded here 
-                    </div>
-                </div>
+        <!-- Formulário de Dados -->
+        <div class="grid grid-cols-2 gap-4 mb-4">
+            <div class="form-group">
+            <label class="form-label" for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" class="form-control">
             </div>
-        </main>
-    </div>
-    
-     Modal de Confirmação 
-    <div class="modal" id="confirmModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="confirmTitle">Confirmar ação</h3>
-                <button class="modal-close">&times;</button>
+            <div class="form-group">
+            <label class="form-label" for="email">Sobrenome</label>
+            <input type="email" id="email" name="email" class="form-control">
             </div>
-            
-            <div class="modal-body">
-                <p id="confirmMessage">Tem certeza que deseja cancelar sua inscrição neste evento?</p>
-                
-                <div class="modal-actions">
-                    <button id="confirmAction" class="btn btn-primary">Confirmar</button>
-                    <button class="btn btn-outline modal-close">Cancelar</button>
-                </div>
+            <div class="form-group">
+            <label class="form-label" for="celular">Telefone</label>
+            <input type="tel" id="celular" name="celular" class="form-control">
+            </div>
+            <div class="form-group">
+            <label class="form-label" for="documento">CPF/CNPJ</label>
+            <input type="text" id="documento" name="documento" class="form-control">
+            </div>
+            <div class="form-group">
+            <label class="form-label" for="endereco">Endereço,Nº</label>
+            <input type="text" id="endereco" name="endereco" class="form-control">
+            </div>
+            <div class="form-group">
+            <label class="form-label" for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" class="form-control">
             </div>
         </div>
-    </div> -->
-    
+
+        <!-- Foto e Botões -->
+        <div class="card p-4 mb-4" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px;">
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+            <button id="btnEditarFoto" class="btn btn-outline">Editar Foto</button>
+            <button id="btnExcluirFoto" class="btn btn-outline">Excluir Foto</button>
+            </div>
+            <div class="foto-user" style="width: 200px; height: 200px; border-radius: 50%; overflow: hidden; background-color: var(--light-gray);">
+            <img id="fotoUsuario" src="/Front-End/imagens/user.svg" alt="Foto do usuário" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+
+        <!-- Botão Salvar -->
+        <div style="text-align: center;">
+            <button id="btnSalvar" class="btn btn-primary">Salvar</button>
+        </div>
+        </main>
+    </div>
     <script src="Js/script.js"></script>
-</body>
+    </body>
 </html>
