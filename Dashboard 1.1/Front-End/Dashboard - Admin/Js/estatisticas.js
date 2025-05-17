@@ -67,8 +67,8 @@
 // }
 
 // function generateRandomData(count, min, max) {
-//     return Array.from({length: count}, () => Math.floor(Math.random() * (max - min + 1) + min);
-// }
+//     return Array.from({length: count}, () => Math.floor(Math.random() * (max - min + 1) + min)
+// )}
 
 // function renderRegistrationsChart(data) {
 //     const ctx = document.getElementById('registrationsChart').getContext('2d');

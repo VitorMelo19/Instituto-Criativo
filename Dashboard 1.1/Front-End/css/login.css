@@ -88,12 +88,18 @@ body {
     color: var(--dark);
     font-size: 16px;
     margin: 5px 0px 40px;
+    
+  }
+  
+  .login-link .login-cadastre-se {
     text-decoration: underline;
+    color:var(--primary-dark);
+    font-size: 14px;
   }
 
   .esqueci-link{
     width: 77%;
-    color: var(--dark);
+    color: var(--primary);
     font-size: 14px;
     margin: 5px;
     text-decoration: underline;
