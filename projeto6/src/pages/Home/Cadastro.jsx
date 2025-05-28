@@ -47,7 +47,7 @@ export default function Cadastro() {
       </div>
 
       {/* <button className="login-button">Cadastrar</button> */}
-      <a href="/home-aluno"> <button className="login-button">Cadastrar</button> </a>
+      <a href="/home-prof"> <button className="login-button">Cadastrar</button> </a>
     </div>
   );
 }
