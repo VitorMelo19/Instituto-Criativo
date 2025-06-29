@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso | Instituto Criativo</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <img src="/Front-End/imagens/logo3.svg" alt="Educa+" height="30">
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link active">
+                            <span class="nav-icon">
+                                <img src="/Front-End/imagens/icons/home.svg">
+                            </span>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="eventos.html" class="nav-link">
+                            <span class="nav-icon">
+                                <img src="/Front-End/imagens/icons/calendar.svg">
+                            </span>
+                            <span>Eventos</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item admin-only">
+                        <a href="estatisticas.html" class="nav-link">
+                            <span class="nav-icon">
+                                <img src="/Front-End/imagens/icons/bar-chart.svg">
+                            </span>
+                            <span>Estatísticas</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="Acesso.html" class="nav-link">
+                            <span class="nav-icon">
+                                <img src="/Front-End/imagens/icons/user-check.svg">
+                            </span>
+                            <span>Acesso</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="Configurações.html" class="nav-link">
+                            <span class="nav-icon">
+                               <img src="/Front-End/imagens/icons/Configurações.svg"> <!-- arrumar expressura do icone -->
+                            </span>
+                            <span>Configurações</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h3>Controle de Acesso</h3>
+                <div class="user-menu">
+                        <span class="nomeUsuario">Nome do Usuario</span>
+                        <div class="fotoUsuario"><img src="User.jpg" alt="User"></div>
+                </div>
+            </header>
+                <div class="card" style="border-radius: 20px; overflow-x: auto;">
+                    <div class="card-body">
+                        <table class="acesso-tabela">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Email</th>
+                                <th>Permitir Acesso</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabela-acesso-body">
+                            <!-- Conteúdo vindo do back-end via JS -->
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                
+
+            
+            
+            <!-- Lista de Eventos  - colocar isso no dashboard aluno
+            <div class="card">
+                <div class="card-body">
+                    <div class="grid grid-cols-1 gap-4" id="myEventsList">
+                         Event cards will be loaded here 
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+     Modal de Confirmação 
+    <div class="modal" id="confirmModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="confirmTitle">Confirmar ação</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <p id="confirmMessage">Tem certeza que deseja cancelar sua inscrição neste evento?</p>
+                
+                <div class="modal-actions">
+                    <button id="confirmAction" class="btn btn-primary">Confirmar</button>
+                    <button class="btn btn-outline modal-close">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    
+    <script src="Js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-mail/Senha | Instituto Criativo</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <img src="/Front-End/imagens/logo3.svg" alt="Educa+" height="30">
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link active">
+                            <span class="nav-icon">
+                                <img src="/Front-End/imagens/icons/home.svg">
+                            </span>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="eventos.html" class="nav-link">
+                            <span class="nav-icon">
+                                <img src="/Front-End/imagens/icons/calendar.svg">
+                            </span>
+                            <span>Eventos</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item admin-only">
+                        <a href="estatisticas.html" class="nav-link">
+                            <span class="nav-icon">
+                                <img src="/Front-End/imagens/icons/bar-chart.svg">
+                            </span>
+                            <span>Estatísticas</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="Acesso.html" class="nav-link">
+                            <span class="nav-icon">
+                                <img src="/Front-End/imagens/icons/user-check.svg">
+                            </span>
+                            <span>Acesso</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="Configurações.html" class="nav-link">
+                            <span class="nav-icon">
+                               <img src="/Front-End/imagens/icons/Configurações.svg"> <!-- arrumar expressura do icone -->
+                            </span>
+                            <span>Configurações</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <header class="header">
+        <h2>Alterar E-mail e Senha</h2>
+        </header>
+
+        <div class="card p-4 mb-4">
+        <div class="grid grid-cols-2 gap-4">
+
+            <!-- Alterar E-mail -->
+            <div class="form-group">
+            <label class="form-label" for="novoEmail">Novo E-mail</label>
+            <input type="email" id="novoEmail" class="form-control" placeholder="exemplo@email.com">
+            </div>
+            <div class="form-group">
+            <label class="form-label" for="senhaAtualEmail">Senha Atual</label>
+            <input type="password" id="senhaAtualEmail" class="form-control" placeholder="Digite sua senha atual">
+            </div>
+
+            <!-- Alterar Senha -->
+            <div class="form-group">
+            <label class="form-label" for="senhaAtual">Senha Atual</label>
+            <input type="password" id="senhaAtual" class="form-control" placeholder="Digite sua senha atual">
+            </div>
+            <div class="form-group">
+            <label class="form-label" for="novaSenha">Nova Senha</label>
+            <input type="password" id="novaSenha" class="form-control" placeholder="Nova senha">
+            </div>
+            <div class="form-group">
+            <label class="form-label" for="confirmaSenha">Confirmar Nova Senha</label>
+            <input type="password" id="confirmaSenha" class="form-control" placeholder="Confirme a nova senha">
+            </div>
+        </div>
+
+        <!-- Botões -->
+        <div style="text-align: center; margin-top: 2rem;">
+            <button class="btn btn-primary" id="btnAlterarEmail">Alterar E-mail</button>
+            <button class="btn btn-secondary" id="btnAlterarSenha" style="margin-left: 1rem;">Alterar Senha</button>
+        </div>
+    </div>
+    </div>
+    <script src="Js/script.js"></script>
+    </body>
+</html>

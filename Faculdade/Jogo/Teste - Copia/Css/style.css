@@ -1,0 +1,84 @@
+/* Remove margens e preenchimentos padrão e define o box-sizing para border-box */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estiliza o tabuleiro do jogo */
+.game-board {
+    width: 90%; /* Define a largura do tabuleiro */
+    height: 600px; /* Define a altura do tabuleiro */
+    border-bottom: 15px solid rgb(4, 182, 4); /* Define a borda inferior com uma cor sólida */
+    margin: 0 auto; /* Centraliza o tabuleiro horizontalmente */
+    position: relative; /* Define a posição relativa para elementos filhos */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa os limites do tabuleiro */
+    background: linear-gradient(#87CEEB, #E0F6FF); /* Define um fundo com gradiente */
+}
+
+/* Estiliza o cano */
+.pipe {
+    position: absolute; /* Define a posição absoluta */
+    bottom: 0; /* Posiciona o cano na parte inferior */
+    width: 80px; /* Define a largura do cano */
+    animation: pipe-animation 1.5s infinite linear; /* Aplica a animação ao cano */
+    right: -80px; /* Corrigido de 'left' para 'right' */
+}
+
+/* Define a animação do cano */
+@keyframes pipe-animation {
+    from {
+        right: -80px; /* Corrigido de 'rigth' para 'right' */
+    }
+    to{
+        right: 100%; /* Move o cano para fora da tela à direita */
+    }
+}
+
+/* Estiliza o Mario */
+.mario {
+    width: 150px; /* Define a largura do Mario */
+    position: absolute; /* Define a posição absoluta */
+    bottom: 0; /* Posiciona o Mario na parte inferior */
+}
+
+/* Define a animação de pulo do Mario */
+.jump {
+    animation: jump 500ms ease-out; /* Aplica a animação de pulo */
+}
+
+/* Define os quadros da animação de pulo */
+@keyframes jump {
+    0% {
+        bottom: 0; /* Inicia no chão */
+    }
+    40%{
+        bottom: 180px; /* Sobe até 180px */
+    }
+    50% {
+        bottom: 180px; /* Mantém a altura máxima */
+    }
+    60%{
+        bottom: 180px; /* Mantém a altura máxima */
+    }
+    100% {
+        bottom: 0; /* Volta ao chão */
+    }
+}
+
+/* Estiliza as nuvens */
+.clouds{
+    width: 550px; /* Define a largura das nuvens */
+    position: absolute; /* Define a posição absoluta */
+    animation: clouds-animation 20s infinite linear; /* Aplica a animação às nuvens */
+}
+
+/* Define a animação das nuvens */
+@keyframes clouds-animation{
+    from {
+        right: -550px; /* Inicia fora da tela à direita */
+    }
+    to {
+        right: 100%; /* Move as nuvens para fora da tela à direita */
+    }
+}

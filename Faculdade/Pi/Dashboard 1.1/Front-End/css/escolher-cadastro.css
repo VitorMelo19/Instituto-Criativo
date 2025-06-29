@@ -1,0 +1,90 @@
+/* TELA DE ESCOLHA DE CADASTRO */
+
+:root {
+  --primary: #FF244A;
+  --primary-dark: #D61F3E;
+  --secondary: #1CEAE4;
+  --secondary-dark: #16C4BE;
+  --tertiary: #FFE910;
+  --quaternary: #4FFF38;
+  --dark: #1A1A1A;
+  --dark-gray: #333333;
+  --medium-gray: #666666;
+  --light-gray: #E5E5E5;
+  --lighter-gray: #F5F5F5;
+  --white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden; /* ← Isso remove a barra lateral horizontal */
+}  
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--light-gray);
+  color: var(--dark);
+  scroll-behavior: smooth;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.logo-banner {
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  margin-top: 10px;
+}
+
+.cadastro-opcoes-container{
+  background-color: var(--light-gray);
+  width: 90%;
+  max-width: 750px;
+  padding: 10px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+  .cadastro-opcoes-container .login-subtitle {
+    margin: 20px;
+  }
+  
+  .cadastro-opcao {
+    background-color: var(--primary);
+    color: var(--white);
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    width: 90%;
+    max-width: 387px;
+    height: 40px;
+    font-size: 18px;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+  }
+  
+  .cadastro-opcao:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  .icone-social {
+    width: 24px;
+    height: 24px;
+  }

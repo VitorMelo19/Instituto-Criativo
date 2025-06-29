@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro | ClickPet</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+  <div class="cadastro-opcoes-container" data-aos="fade-up">
+    <img src="/Img/Login-Cadastro.png" alt="Banner" class="login-banner" />
+
+    <h2 class="login-subtitle">Escolha a forma de cadastramento:</h2>
+
+    <a href="cadastro.html" class="cadastro-opcao">E-mail/Senha</a>
+
+    <button class="cadastro-opcao" onclick="cadastrarGoogle()">
+      <img src="/Img/google-icon.png" alt="Google" class="icone-social" />
+      Conta Google
+    </button>
+
+    <button class="cadastro-opcao" onclick="cadastrarApple()">
+      <img src="/Img/apple-icon.png" alt="Apple" class="icone-social" />
+      Conta Apple
+    </button>
+  </div>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="script.js"></script>
+  <script>
+    function cadastrarGoogle() {
+      window.location.href = "http://localhost:3000/api/auth/google";
+  }
+
+    function cadastrarApple() {
+      alert('Futuramente abrirá o fluxo de cadastro com a Apple...');
+    }
+  </script>
+</body>
+</html>

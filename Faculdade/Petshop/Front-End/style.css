@@ -1,0 +1,685 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    overflow-x: hidden; /* ← Isso remove a barra lateral horizontal */
+  }  
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #4a81ae;
+    color: #ffffff;
+    scroll-behavior: smooth;
+  }
+  
+  /* NAVBAR */
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: transparent;
+    padding: 10px 20px;
+  }
+  .nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* LOGO */
+  .logo-box img {
+    width: 180px;
+    height: auto;
+  }
+  
+  /* MENU */
+  .menu-box {
+    width: 600px;
+    height: 48px;
+    border-radius: 45px;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  .menu-box a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  /* LOGIN */
+  .login-box {
+    width: 180px;
+    height: 48px;
+    background-color: #fe5b00;
+    border-radius: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-box a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  /* SEÇÕES */
+  .secao {
+    min-height: 100vh;
+    padding: 100px 40px 100px;
+    background-color: #4a81ae;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* CONTAINER HOME */
+  .home-container {
+    display: flex;
+    flex-direction: row-reverse; /* Inverter imagem e texto */
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding-top: 0px;
+    gap: 20px;
+  }
+  
+  /* TEXTO HOME */
+  .texto-home {
+    max-width: 450px;
+    text-align: center;
+    margin-left: auto;   /* Alinha à direita */
+    margin-right: 40px;
+  }
+  .texto-home h1 {
+    font-size: 64px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  .texto-home h2 {
+    font-size: 28px;
+    font-weight: normal;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  .texto-home p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  /* IMAGEM PRINCIPAL - Depois tem que arrumar isso */
+  .imagem-principal img {
+    width: 600px;
+    height: auto;
+    position: relative;
+    left: 0;
+    top: 0;
+    animation: fadeIn 1.2s ease-in-out forwards;
+  }
+  
+  /* ANIMAÇÃO */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* RESPONSIVO */
+  @media (max-width: 1024px) {
+    .nav-content {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      gap: 10px;
+    }
+  
+    .logo-box img,
+    .login-box,
+    .menu-box {
+      transform: scale(0.9);
+    }
+  
+    .home-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .imagem-principal img {
+      position: static;
+      width: 80%;
+      margin-bottom: 20px;
+    }
+  
+    .texto-home {
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+  /* CONTAINER SOBRE NÓS */
+.sobre-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding-top: -10px; /* ↓ Subindo a seção */
+    gap: 20px;
+  }
+  
+  /* IMAGEM SOBRE NÓS */
+  .imagem-sobre img {
+    width: 800px;
+    height: 832px;
+    position: relative;
+    left: -100px;
+    top: 0;
+    animation: fadeIn 1.2s ease-in-out forwards;
+  }
+
+  /* CONTAINER HISTÓRIA */
+.historia-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    position: relative;
+    padding-top: -10px; /* ↓ Subindo ainda mais */
+  }
+  
+  /* ESQUERDA */
+  .historia-esquerda {
+    max-width: 30%;
+    margin-left: 40px;
+    position: relative;
+    z-index: 10;
+  }
+  .historia-esquerda h1 {
+    font-size: 64px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 10;
+    white-space: nowrap; /* ← ISSO EVITA QUE QUEBRE A LINHA */
+  }
+  .historia-esquerda p {
+    font-size: 18px;
+    color: #ffffff;
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* DIREITA */
+  .historia-direita {
+    max-width: 40%;
+    margin-right: 40px;
+    text-align: right;
+    position: relative;
+    z-index: 10;
+  }
+  .historia-direita h3 {
+    font-size: 20px;
+    color: #fe5b00;
+    margin-bottom: 5px;
+    position: relative;
+    z-index: 10;
+  }
+  .historia-direita p {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* IMAGEM NO FUNDO INFERIOR */
+  .imagem-historia {
+    position: absolute;
+    bottom: -400px;
+    left: 50px;
+
+  }
+  .imagem-historia img {
+    width: 800px;
+    height: 800px;
+    animation: fadeIn 1.2s ease-in-out forwards;
+  }
+  
+  /* CLASSE PARA SUBTÍTULOS LARANJA */
+  .subtitulo-laranja {
+    color: #fe5b00;
+  }
+
+  /* CONTAINER VISÃO E MISSÃO */
+.visao-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  gap: 60px;
+  padding-top: 200px; /* ↓ Subindo a seção */
+}
+
+/* TEXTO VISÃO E MISSÃO À ESQUERDA */
+.visao-texto {
+  flex: 2;
+  text-align: left;
+}
+.visao-texto h1 {
+  font-size: 64px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.visao-texto h3 {
+  font-size: 22px;
+  color: #fe5b00;
+  margin-bottom: 10px;
+}
+.visao-texto p {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+/* IMAGEM VISÃO E MISSÃO À DIREITA */
+.imagem-visao {
+  flex: 1;
+}
+.imagem-visao img {
+  width: 600px;
+  height: 500px;
+  right: -10px;
+  animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+/* CONTAINER SERVIÇOS 1 */
+.servicos1-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  gap: 60px;
+  position: relative;
+  padding-top: 150px;
+}
+
+/* IMAGEM LATERAL MAIOR NO CANTO ESQUERDO */
+.imagem-servico-lateral {
+  position: absolute;
+  left: -400px; /* ← desloca a imagem grande pra esconder parte dela */
+  top: 0;
+  z-index: 1;
+}
+.imagem-servico-lateral img {
+  width: 1000px;
+  height: auto;
+  animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+/* CONTEÚDO DE TEXTO À DIREITA */
+.servicos1-conteudo {
+  flex: 1;
+  margin-left: auto;
+  margin-right: 80px; /* ← Afastando o TÍTULO da lateral direita */
+  text-align: right;
+  z-index: 2;
+}
+
+.servicos1-conteudo h1 {
+  font-size: 64px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+
+/* CADA BLOCO DE SERVIÇO */
+.bloco-servico {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* ← Alinha todo o bloco pra direita */
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.bloco-servico img {
+  width: 120px;
+  height: auto;
+  border-radius: 10px;
+  order: 1; /* ← Garante que a imagem venha antes */
+}
+
+.bloco-servico .texto {
+  max-width: 400px;
+  text-align: left; /* ← Mantém o texto à direita */
+  order: 2;
+}
+
+.bloco-servico h3 {
+  font-size: 22px;
+  color: #fe5b00;
+  margin-bottom: 10px;
+}
+
+.bloco-servico p {
+  font-size: 18px;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+/* CONTAINER SERVIÇOS 2 */
+.servicos2-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  gap: 60px;
+  position: relative;
+  padding-top: 150px;
+}
+
+/* CONTEÚDO DE TEXTO À DIREITA */
+.servicos2-conteudo {
+  flex: 1;
+  margin-left: auto;
+  margin-right: 80px; /* ← Afastando o TÍTULO da lateral direita */
+  text-align: right;
+  z-index: 2;
+}
+
+.servicos2-conteudo h1 {
+  font-size: 64px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+
+.contato-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+}
+
+.contato-texto {
+  flex: 2;
+  text-align: left;
+  margin-left: 40px;
+}
+
+.contato-texto h1 {
+  font-size: 48px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.descricao-contato {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.linha-info {
+  display: flex;
+  gap: 80px;
+  margin-bottom: 40px;
+}
+
+.bloco-info h3 {
+  font-size: 20px;
+  color: #fe5b00;
+  margin-bottom: 10px;
+}
+
+.bloco-info p {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.rede-social h3 {
+  font-size: 20px;
+  color: #fe5b00;
+  margin-bottom: 10px;
+}
+
+.item-rede {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.item-rede img {
+  width: 24px;
+  height: 24px;
+}
+
+.item-rede p {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.contato-imagem img {
+  width: 500px;
+  position: relative;
+  right: -10px;
+  animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+.rodape {
+  background-color: #fe5b00;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* TELA DE LOGIN */
+.login-container {
+  background-color: #4a81ae;
+  min-height: 100vh;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.login-banner {
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  margin-top: 1px;
+}
+
+.login-subtitle {
+  color: #fff;
+  font-size: 22px;
+  text-align: center;
+  margin: 0px 0 10px;
+}
+
+.login-label {
+  color: #fff;
+  font-size: 16px;
+  margin: 15px 0 5px;
+  align-self: center;
+  max-width: 780px;
+  width: 100%;
+}
+
+.login-input {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 50px;
+  width: 90%;
+  max-width: 780px;
+  height: 50px;
+  padding: 0 20px;
+  font-size: 16px;
+}
+
+.login-link {
+  color: #fff;
+  font-size: 16px;
+  margin: 25px 0;
+  text-decoration: underline;
+}
+
+.login-button {
+  background-color: #fe5b00;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  width: 387px;
+  height: 50px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #e15000;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .login-input, .login-label {
+    width: 100%;
+  }
+
+  .login-button {
+    width: 90%;
+  }
+}
+
+/* TELA DE ESCOLHA DE CADASTRO */
+.cadastro-opcoes-container {
+  background-color: #4a81ae;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cadastro-opcao {
+  background-color: #fe5b00;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  width: 90%;
+  max-width: 387px;
+  height: 60px;
+  font-size: 18px;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.cadastro-opcao:hover {
+  background-color: #e15000;
+}
+
+.icone-social {
+  width: 24px;
+  height: 24px;
+}
+
+/* TELA DE CADASTRAMENTO */
+.cadastro-container {
+  background-color: #4a81ae;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cadastro-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.coluna {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Reaproveita .login-label e .login-input já existentes */
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .cadastro-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .coluna {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .login-button {
+    width: 90%;
+  }
+}
+
+/* AJUSTES ESPECÍFICOS SÓ PARA A TELA DE CADASTRO */
+.cadastro-container .login-label {
+  margin-bottom: -5px; /* ↓ Aproxima do input */
+}
+
+.cadastro-container .login-button {
+  margin-top: 50px; /* ↑ Aumenta distância do botão "Cadastrar" */
+}
+
+/* MENSAGENS DE ERRO */
+.error-msg {
+  color: red;
+  font-size: 0.85em;
+  margin-top: 4px;
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estatísticas | Instituto Criativo</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <img src="/Front-End/imagens/logo3.svg" alt="Educa+" height="30">
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link active">
+                            <span class="nav-icon">
+                                <img src="/Front-End/imagens/icons/home.svg">
+                            </span>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="eventos.html" class="nav-link">
+                            <span class="nav-icon">
+                                <img src="/Front-End/imagens/icons/calendar.svg">
+                            </span>
+                            <span>Eventos</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item admin-only">
+                        <a href="estatisticas.html" class="nav-link">
+                            <span class="nav-icon">
+                                <img src="/Front-End/imagens/icons/bar-chart.svg">
+                            </span>
+                            <span>Estatísticas</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="Acesso.html" class="nav-link">
+                            <span class="nav-icon">
+                                <img src="/Front-End/imagens/icons/user-check.svg">
+                            </span>
+                            <span>Acesso</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="Configurações.html" class="nav-link">
+                            <span class="nav-icon">
+                               <img src="/Front-End/imagens/icons/Configurações.svg"> <!-- arrumar expressura do icone -->
+                            </span>
+                            <span>Configurações</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h2>Estatísticas</h2>
+                
+                <div class="header-actions">
+                    <div class="date-filter">
+                        <select id="statsPeriod" class="form-control">
+                            <option value="7">Últimos 7 dias</option>
+                            <option value="30" selected>Últimos 30 dias</option>
+                            <option value="90">Últimos 3 meses</option>
+                            <option value="365">Último ano</option>
+                        </select>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Resumo Estatístico -->
+            <div class="stats-grid mb-4">
+                <div class="stat-card">
+                    <div class="stat-value">1,248</div>
+                    <div class="stat-label">Total de Inscrições</div>
+                    <div class="stat-change up">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 19V5M5 12L12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>12% em relação ao período anterior</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-value">R$ 24,560</div>
+                    <div class="stat-label">Arrecadação Total</div>
+                    <div class="stat-change down">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M19 12L12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>8% em relação ao período anterior</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-value">48</div>
+                    <div class="stat-label">Eventos Realizados</div>
+                    <div class="stat-change up">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 19V5M5 12L12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>5 novos eventos</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-value">87%</div>
+                    <div class="stat-label">Taxa de Satisfação</div>
+                    <div class="stat-change up">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 19V5M5 12L12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>3% em relação ao período anterior</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gráficos -->
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Inscrições por Período</h3>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="registrationsChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Tipos de Eventos</h3>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="eventTypesChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Arrecadação Mensal</h3>
+                </div>
+                <div class="card-body">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="js/estatisticas.js"></script>
+</body>
+</html>

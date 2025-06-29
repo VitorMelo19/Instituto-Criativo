@@ -1,0 +1,233 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: #4A81AE;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.painel-cliente {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: hidden;
+  min-height: 100vh;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+}
+
+/* MENU LATERAL */
+.menu-lateral {
+  position: absolute;
+  left: -150px;
+  top: 35px;
+  width: 118px;
+  height: 953px;
+  transition: all 0.4s ease-in-out;
+}
+
+.menu-lateral.ativo {
+  left: 28px;
+}
+
+.retangulo-menu {
+  background: #FE5B00;
+  width: 118px;
+  height: 953px;
+  border-radius: 50px;
+  box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding-top: 76px;
+}
+
+.menu-icone {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 62px;
+  top: 76px;
+  cursor: pointer;
+}
+
+/* CHAT */
+.chat-lateral {
+  position: absolute;
+  right: -300px;
+  top: 32px;
+  width: 245px;
+  height: 956px;
+  transition: all 0.4s ease-in-out;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chat-lateral.ativo {
+  right: 0;
+}
+
+.retangulo-chat {
+  width: 245px;
+  height: 953px;
+  background: #FFFFFF;
+  border-radius: 50px;
+  margin-right: 20px;
+}
+
+/* BOTÃO DO CHAT */
+.chat-topo {
+  position: absolute;
+  top: 32px;
+  right: 20px;
+  width: 245px;
+  height: 80px;
+  background: #FE5B00;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 41px;
+  cursor: pointer;
+}
+
+.icone-chat {
+  width: 60px;
+  height: 60px;
+}
+
+.texto-chat {
+  font-weight: 700;
+  font-size: 24px;
+  color: #000;
+}
+
+/* LOGO E TITULO */
+.logo-area {
+  position: absolute;
+  top: 68px;
+  left: 188px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.logo-img {
+  width: auto;
+  height: 60px;
+  object-fit: contain;
+  margin-top: 10px;
+}
+
+.portal-titulo {
+  font-weight: 700;
+  font-size: 24px;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* PERFIL CLIENTE */
+.perfil-cliente {
+  position: absolute;
+  top: 72px;
+  left: 846px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.foto-cliente {
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.nome-cliente {
+  font-weight: 700;
+  font-size: 24px;
+  color: #fff;
+}
+
+/* CAMPO DE IMAGEM */
+.campo-imagem {
+  position: absolute;
+  top: 189px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 400px;
+  background: #FE5B00;
+  border-radius: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+  .campo-imagem {
+    width: 90%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+  }
+}
+
+/* BOXES INFERIORES */
+.box-servico, .box-agendamento {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  top: 730px;
+}
+
+.box-servico {
+  left: 200px;
+}
+
+.box-agendamento {
+  left: 526px;
+}
+
+.icone-servico, .icone-agendamento {
+  width: 80px;
+  height: 80px;
+  background: #FE5B00;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bloco-servico, .bloco-agendamento {
+  width: 293px;
+  background: #FFFFFF;
+  border-radius: 30px;
+  padding: 32px 17px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.titulo-bloco {
+  font-weight: 700;
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.proximo-horario {
+  background: #4A81AE;
+  border-radius: 30px;
+  padding: 2px 20px;
+  color: #F5F5F5;
+  font-weight: 700;
+  font-size: 20px;
+  width: fit-content;
+  margin: 0 auto;
+}

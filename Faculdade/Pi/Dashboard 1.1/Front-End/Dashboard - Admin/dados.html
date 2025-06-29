@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados | Instituto Criativo</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <img src="/Front-End/imagens/logo3.svg" alt="Educa+" height="30">
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link active">
+                            <span class="nav-icon">
+                                <img src="/Front-End/imagens/icons/home.svg">
+                            </span>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="eventos.html" class="nav-link">
+                            <span class="nav-icon">
+                                <img src="/Front-End/imagens/icons/calendar.svg">
+                            </span>
+                            <span>Eventos</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item admin-only">
+                        <a href="estatisticas.html" class="nav-link">
+                            <span class="nav-icon">
+                                <img src="/Front-End/imagens/icons/bar-chart.svg">
+                            </span>
+                            <span>Estatísticas</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="Acesso.html" class="nav-link">
+                            <span class="nav-icon">
+                                <img src="/Front-End/imagens/icons/user-check.svg">
+                            </span>
+                            <span>Acesso</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="Configurações.html" class="nav-link">
+                            <span class="nav-icon">
+                               <img src="/Front-End/imagens/icons/Configurações.svg"> <!-- arrumar expressura do icone -->
+                            </span>
+                            <span>Configurações</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+        <header class="header">
+            <h2>Alterar Dados Pessoais</h2>
+        </header>
+
+        <!-- Formulário de Dados -->
+        <div class="grid grid-cols-2 gap-4 mb-4">
+            <div class="form-group">
+            <label class="form-label" for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" class="form-control">
+            </div>
+            <div class="form-group">
+            <label class="form-label" for="email">Sobrenome</label>
+            <input type="email" id="email" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+            <label class="form-label" for="celular">Telefone</label>
+            <input type="tel" id="celular" name="celular" class="form-control">
+            </div>
+            <div class="form-group">
+            <label class="form-label" for="documento">CPF/CNPJ</label>
+            <input type="text" id="documento" name="documento" class="form-control">
+            </div>
+            <div class="form-group">
+            <label class="form-label" for="endereco">Endereço,Nº</label>
+            <input type="text" id="endereco" name="endereco" class="form-control">
+            </div>
+            <div class="form-group">
+            <label class="form-label" for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" class="form-control">
+            </div>
+        </div>
+
+        <!-- Foto e Botões -->
+        <div class="card p-4 mb-4" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px;">
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+            <button id="btnEditarFoto" class="btn btn-outline">Editar Foto</button>
+            <button id="btnExcluirFoto" class="btn btn-outline">Excluir Foto</button>
+            </div>
+            <div class="foto-user" style="width: 200px; height: 200px; border-radius: 50%; overflow: hidden; background-color: var(--light-gray);">
+            <img id="fotoUsuario" src="/Front-End/imagens/user.svg" alt="Foto do usuário" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+
+        <!-- Botão Salvar -->
+        <div style="text-align: center;">
+            <button id="btnSalvar" class="btn btn-primary">Salvar</button>
+        </div>
+        </main>
+    </div>
+    <script src="Js/script.js"></script>
+    </body>
+</html>

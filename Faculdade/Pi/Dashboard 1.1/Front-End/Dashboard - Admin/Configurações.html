@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações | Instituto Criativo</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <img src="/Front-End/imagens/logo3.svg" alt="Educa+" height="30">
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link active">
+                            <span class="nav-icon">
+                                <img src="/Front-End/imagens/icons/home.svg">
+                            </span>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="eventos.html" class="nav-link">
+                            <span class="nav-icon">
+                                <img src="/Front-End/imagens/icons/calendar.svg">
+                            </span>
+                            <span>Eventos</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item admin-only">
+                        <a href="estatisticas.html" class="nav-link">
+                            <span class="nav-icon">
+                                <img src="/Front-End/imagens/icons/bar-chart.svg">
+                            </span>
+                            <span>Estatísticas</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="Acesso.html" class="nav-link">
+                            <span class="nav-icon">
+                                <img src="/Front-End/imagens/icons/user-check.svg">
+                            </span>
+                            <span>Acesso</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="Configurações.html" class="nav-link">
+                            <span class="nav-icon">
+                               <img src="/Front-End/imagens/icons/Configurações.svg"> <!-- arrumar expressura do icone -->
+                            </span>
+                            <span>Configurações</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+        <header class="header">
+            <h2>Configurações</h2>
+        </header>
+
+        <!-- BLOCO DE IMAGEM COM NOME E FOTO -->
+        <section class="card mb-4" style="border-radius: 20px; padding: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <div style="flex: 1 1 300px;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Olá,</h1>
+            <h2 id="nomeUsuario" style="font-size: 2rem; color: var(--primary);">Nome do Usuário</h2>
+            </div>
+            <div class="foto-cliente-config" style="width: 180px; height: 180px; border-radius: 50%; overflow: hidden; background-color: var(--primary-light);">
+            <img id="fotoUsuario" src="/Front-End/imagens/user.svg" alt="Foto do usuário" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </section>
+
+        <!-- BLOCO DE OPÇÕES -->
+        <section class="card" style="border-radius: 20px; padding: 2rem;">
+            <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Minha Conta</h2>
+            <div class="grid grid-cols-2 gap-4">
+            <a href="dados.html" class="btn btn-outline">Alterar Dados Pessoais</a>
+            <a href="email/senha.html" class="btn btn-outline">Alterar E-mail/Senha</a>
+            </div>
+        </section>
+        </main>
+    </div>
+    <script src="Js/script.js"></script>
+    </body>
+</html>
+
+
+        

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel do Cliente | ClickPet</title>
+  <link rel="stylesheet" href="painel-cliente.css">
+</head>
+<body>
+  <div class="painel-cliente">
+
+    <!-- Menu lateral escondido -->
+    <div class="menu-lateral" id="menuLateral">
+      <div class="retangulo-menu">
+        <img src="/Img/Home.png" alt="Home">
+        <img src="/Img/Agendamento (2).png" alt="Agendamentos">
+        <img src="/Img/Indique.png" alt="Indique">
+        <img src="/Img/Serviços.png" alt="Serviços">
+        <img src="/Img/Configurações.png" alt="Configurações">
+        <img src="/Img/Sair.png" alt="Sair" class="sair-btn">
+      </div>
+    </div>
+
+    <!-- Chat lateral escondido -->
+    <div class="chat-lateral" id="chatLateral">
+      <div class="retangulo-chat">
+        <!-- Aqui você pode colocar o conteúdo do chat futuramente -->
+      </div>
+    </div>
+
+   <!-- Botão do menu (hamburguer) -->
+   <img src="/Img/Home.png" id="menuBtn" class="menu-icone" alt="Menu" style="display: block;">
+
+
+    <!-- Cabeçalho do chat -->
+    <div class="chat-topo" id="chatBtn">
+      <img src="/Img/Chat.png" alt="Chat" class="icone-chat">
+      <span class="texto-chat">Chat</span>
+    </div>
+
+    <!-- Logo e título -->
+    <div class="logo-area">
+      <p class="portal-titulo">Portal do Cliente</p>
+      <img src="/Img/Logo.png" class="logo-img" alt="Logo">
+    </div>
+
+    <!-- Perfil cliente -->
+    <div class="perfil-cliente">
+      <p class="nome-cliente">Victor Melo</p>
+      <div class="foto-cliente"></div>
+    </div>
+
+    <!-- Campo principal imagem/banner -->
+    <div class="campo-imagem"></div>
+
+    <!-- Blocos inferiores -->
+    <div class="box-servico">
+      <div class="icone-servico"><img src="/Img/Serviços.png" alt="Serviços"></div>
+      <div class="bloco-servico">
+        <p class="titulo-bloco">Serviços usados recentemente :</p>
+      </div>
+    </div>
+
+    <div class="box-agendamento">
+      <div class="icone-agendamento"><img src="/Img/Agendamento (2).png" alt="Agendamento"></div>
+      <div class="bloco-agendamento">
+        <p class="titulo-bloco">Próximos Agendamentos:</p>
+        <div class="proximo-horario">24/05/2025 - 19h55</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="painel-cliente.js"></script>
+</body>
+</html>
